@@ -20,6 +20,5 @@ pip-log.txt
 .coverage
 .tox
 
-bootstrap
 *.swp
 .*.swp
