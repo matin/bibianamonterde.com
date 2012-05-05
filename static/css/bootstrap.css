@@ -193,11 +193,7 @@ a:hover {
 .container,
 .navbar-fixed-top .container,
 .navbar-fixed-bottom .container {
-  width: 1000px;
-}
-
-.span50 {
-  width: 1000px;
+  width: 980px;
 }
 
 .span49 {
@@ -394,10 +390,6 @@ a:hover {
 
 .span1 {
   width: 20px;
-}
-
-.offset50 {
-  margin-left: 1000px;
 }
 
 .offset49 {
@@ -617,7 +609,7 @@ a:hover {
   width: 100%;
   min-height: 28px;
   margin-left: 2.127659574%;
-  *margin-left: 2.077659574%;
+  *margin-left: 2.0766391658367347%;
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
       -ms-box-sizing: border-box;
@@ -628,254 +620,249 @@ a:hover {
   margin-left: 0;
 }
 
-.row-fluid .span50 {
-  width: 423.404255276%;
-  *width: 423.354255276%;
-}
-
 .row-fluid .span49 {
   width: 414.893616979%;
-  *width: 414.843616979%;
+  *width: 414.84259657083675%;
 }
 
 .row-fluid .span48 {
   width: 406.382978682%;
-  *width: 406.332978682%;
+  *width: 406.33195827383673%;
 }
 
 .row-fluid .span47 {
   width: 397.872340385%;
-  *width: 397.82234038499996%;
+  *width: 397.8213199768367%;
 }
 
 .row-fluid .span46 {
   width: 389.361702088%;
-  *width: 389.311702088%;
+  *width: 389.31068167983676%;
 }
 
 .row-fluid .span45 {
   width: 380.851063791%;
-  *width: 380.801063791%;
+  *width: 380.80004338283675%;
 }
 
 .row-fluid .span44 {
   width: 372.340425494%;
-  *width: 372.290425494%;
+  *width: 372.28940508583673%;
 }
 
 .row-fluid .span43 {
   width: 363.829787197%;
-  *width: 363.77978719699996%;
+  *width: 363.7787667888367%;
 }
 
 .row-fluid .span42 {
   width: 355.31914889999996%;
-  *width: 355.26914889999995%;
+  *width: 355.2681284918367%;
 }
 
 .row-fluid .span41 {
   width: 346.80851060299995%;
-  *width: 346.75851060299993%;
+  *width: 346.7574901948367%;
 }
 
 .row-fluid .span40 {
   width: 338.297872306%;
-  *width: 338.247872306%;
+  *width: 338.24685189783673%;
 }
 
 .row-fluid .span39 {
   width: 329.787234009%;
-  *width: 329.73723400899996%;
+  *width: 329.7362136008367%;
 }
 
 .row-fluid .span38 {
   width: 321.276595712%;
-  *width: 321.226595712%;
+  *width: 321.22557530383676%;
 }
 
 .row-fluid .span37 {
   width: 312.765957415%;
-  *width: 312.715957415%;
+  *width: 312.71493700683675%;
 }
 
 .row-fluid .span36 {
   width: 304.255319118%;
-  *width: 304.205319118%;
+  *width: 304.20429870983673%;
 }
 
 .row-fluid .span35 {
   width: 295.744680821%;
-  *width: 295.69468082099996%;
+  *width: 295.6936604128367%;
 }
 
 .row-fluid .span34 {
   width: 287.23404252399996%;
-  *width: 287.18404252399995%;
+  *width: 287.1830221158367%;
 }
 
 .row-fluid .span33 {
   width: 278.723404227%;
-  *width: 278.673404227%;
+  *width: 278.67238381883675%;
 }
 
 .row-fluid .span32 {
   width: 270.21276593%;
-  *width: 270.16276593%;
+  *width: 270.16174552183674%;
 }
 
 .row-fluid .span31 {
   width: 261.702127633%;
-  *width: 261.65212763299996%;
+  *width: 261.6511072248367%;
 }
 
 .row-fluid .span30 {
   width: 253.19148933600002%;
-  *width: 253.141489336%;
+  *width: 253.14046892783676%;
 }
 
 .row-fluid .span29 {
   width: 244.680851039%;
-  *width: 244.630851039%;
+  *width: 244.62983063083675%;
 }
 
 .row-fluid .span28 {
   width: 236.170212742%;
-  *width: 236.12021274199998%;
+  *width: 236.11919233383674%;
 }
 
 .row-fluid .span27 {
   width: 227.65957444499998%;
-  *width: 227.60957444499996%;
+  *width: 227.60855403683672%;
 }
 
 .row-fluid .span26 {
   width: 219.14893614800002%;
-  *width: 219.098936148%;
+  *width: 219.09791573983676%;
 }
 
 .row-fluid .span25 {
   width: 210.638297851%;
-  *width: 210.588297851%;
+  *width: 210.58727744283675%;
 }
 
 .row-fluid .span24 {
   width: 202.127659554%;
-  *width: 202.07765955399998%;
+  *width: 202.07663914583674%;
 }
 
 .row-fluid .span23 {
   width: 193.617021257%;
-  *width: 193.567021257%;
+  *width: 193.56600084883675%;
 }
 
 .row-fluid .span22 {
   width: 185.10638296000002%;
-  *width: 185.05638296%;
+  *width: 185.05536255183677%;
 }
 
 .row-fluid .span21 {
   width: 176.595744663%;
-  *width: 176.545744663%;
+  *width: 176.54472425483675%;
 }
 
 .row-fluid .span20 {
   width: 168.085106366%;
-  *width: 168.03510636599998%;
+  *width: 168.03408595783674%;
 }
 
 .row-fluid .span19 {
   width: 159.57446806899998%;
-  *width: 159.52446806899997%;
+  *width: 159.52344766083672%;
 }
 
 .row-fluid .span18 {
   width: 151.063829772%;
-  *width: 151.01382977199998%;
+  *width: 151.01280936383674%;
 }
 
 .row-fluid .span17 {
   width: 142.553191475%;
-  *width: 142.503191475%;
+  *width: 142.50217106683675%;
 }
 
 .row-fluid .span16 {
   width: 134.042553178%;
-  *width: 133.99255317799998%;
+  *width: 133.99153276983674%;
 }
 
 .row-fluid .span15 {
   width: 125.531914881%;
-  *width: 125.48191488100001%;
+  *width: 125.48089447283674%;
 }
 
 .row-fluid .span14 {
   width: 117.02127658399999%;
-  *width: 116.971276584%;
+  *width: 116.97025617583672%;
 }
 
 .row-fluid .span13 {
   width: 108.510638287%;
-  *width: 108.46063828700001%;
+  *width: 108.45961787883674%;
 }
 
 .row-fluid .span12 {
   width: 99.99999998999999%;
-  *width: 99.94999999%;
+  *width: 99.94897958183672%;
 }
 
 .row-fluid .span11 {
   width: 91.489361693%;
-  *width: 91.43936169300001%;
+  *width: 91.43834128483674%;
 }
 
 .row-fluid .span10 {
   width: 82.97872339599999%;
-  *width: 82.928723396%;
+  *width: 82.92770298783672%;
 }
 
 .row-fluid .span9 {
   width: 74.468085099%;
-  *width: 74.41808509900001%;
+  *width: 74.41706469083674%;
 }
 
 .row-fluid .span8 {
   width: 65.95744680199999%;
-  *width: 65.907446802%;
+  *width: 65.90642639383672%;
 }
 
 .row-fluid .span7 {
   width: 57.446808505%;
-  *width: 57.396808505%;
+  *width: 57.39578809683673%;
 }
 
 .row-fluid .span6 {
   width: 48.93617020799999%;
-  *width: 48.886170207999996%;
+  *width: 48.885149799836725%;
 }
 
 .row-fluid .span5 {
   width: 40.425531911%;
-  *width: 40.375531911%;
+  *width: 40.37451150283673%;
 }
 
 .row-fluid .span4 {
   width: 31.914893614%;
-  *width: 31.864893614%;
+  *width: 31.863873205836736%;
 }
 
 .row-fluid .span3 {
   width: 23.404255317%;
-  *width: 23.354255317%;
+  *width: 23.353234908836736%;
 }
 
 .row-fluid .span2 {
   width: 14.89361702%;
-  *width: 14.84361702%;
+  *width: 14.842596611836735%;
 }
 
 .row-fluid .span1 {
   width: 6.382978723%;
-  *width: 6.332978723%;
+  *width: 6.331958314836735%;
 }
 
 .container {
@@ -1484,12 +1471,6 @@ input,
 textarea,
 .uneditable-input {
   margin-left: 0;
-}
-
-input.span50,
-textarea.span50,
-.uneditable-input.span50 {
-  width: 990px;
 }
 
 input.span49,
@@ -4460,7 +4441,7 @@ input[type="submit"].btn.btn-mini {
 
 .navbar-fixed-top .container,
 .navbar-fixed-bottom .container {
-  width: 1000px;
+  width: 980px;
 }
 
 .navbar-fixed-top {
