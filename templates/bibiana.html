@@ -21,40 +21,20 @@
 
 		<div class="container">
 			<div class="span1">&nbsp;</div>
-			<div class="span12"><div class="nav">
-				<div class="bibiana">BIBIANA <br> MONTERDE</div>
-				<div class="job-title">GRAPHIC <br> DESIGNER</div>
+			<div class="span12">
+				<div class="nav">
+					<div class="bibiana">BIBIANA <br> MONTERDE</div>
+					<div class="job-title">GRAPHIC <br> DESIGNER</div>
 
-				<div class="menu">
-					<ol>
-						<li class="section">
-							<a href="#">
-								<span class="number">01</span>
-								<span class="slash">/</span>
-								<span class="name">WEB</span>
-							</a>
-						</li>
-						<!--ol>
-							<li>01 INMOBI</li>
-							<li>02 INTERWEST</li>
-						</ol-->
-						<li class="section">
-							<a href="#">
-								<span class="number">02</span>
-								<span class="slash">/</span>
-								<span class="name">PRINT</span>
-							</a>
-						</li>
-						<ol>
-							<li>01 BARE more</li>
-						</ol>
-					</ol>
-				</div>
+					<div class="menu">
+						{% block menu %}{% endblock %}
+					</div>
 
-				<div class="email">
-					<a href="mailto:%22Bibiana Monterde%22 &lt;bbmonterde@gmail.com&gt;">BBMONTERDE@GMAIL.COM</a>
+					<div class="email">
+						<a href="mailto:%22Bibiana Monterde%22 &lt;bbmonterde@gmail.com&gt;">BBMONTERDE@GMAIL.COM</a>
+					</div>
 				</div>
-			</div></div>
+			</div>
 			<div class="main span36">
 				{% block main %}{% endblock %}
 			</div>

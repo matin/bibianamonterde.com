@@ -1,21 +1,46 @@
 {% extends "bibiana.html" %}
 
+{% block menu %}
+	<ol>
+		<li class="section">
+			<a href="#">
+				<span class="number">01</span>
+				<span class="slash">/</span>
+				<span class="name">WEB</span>
+			</a>
+		</li>
+		<!--ol>
+			<li>01 INMOBI</li>
+			<li>02 INTERWEST</li>
+		</ol-->
+		<li class="section">
+			<a href="#">
+				<span class="number">02</span>
+				<span class="slash">/</span>
+				<span class="name">PRINT</span>
+			</a>
+		</li>
+		<ol>
+			<li>01 BARE more</li>
+		</ol>
+	</ol>
+{% endblock %}
+
+
 {% block main %}
-				<div class="row">
-					{{ dict(image=images[0], section=('01', 'WEB'), project=('03', 'MARKETO')) | preview }}
-					{{ dict(image=images[1], section=('01', 'WEB'), project=('05', 'NUMENTA')) | preview }}
-					{{ dict(image=images[2], section=('01', 'WEB'), project=('02', 'INTERWEST')) | preview }}
-				</div>
-				<div class="row">
-					{{ dict(image=images[3], section=('01', 'WEB'), project=('04', 'NOCTILUCA')) | preview }}
-					{{ dict(image=images[4], section=('02', 'PRINT'), project=('04', 'GENETIC')) | preview }}
-					{{ dict(image=images[5], section=('02', 'PRINT'), project=('03', 'M_D')) | preview }}
-				</div>
-				<div class="row">
-					{{ dict(image=images[6], section=('03', 'PACKAGING'), project=('02', 'KNACK')) | preview }}
-					{{ dict(image=images[7], section=('01', 'WEB'), project=('01', 'INMOBI')) | preview }}
-					{{ dict(image=images[8], section=('02', 'PRINT'), project=('01', 'BARE')) | preview }}
-				</div>
-			</div>
-		</div>
+	<div class="row">
+		{{ dict(image=images[0], section=('01', 'WEB'), project=('03', 'MARKETO')) | preview }}
+		{{ dict(image=images[1], section=('01', 'WEB'), project=('05', 'NUMENTA')) | preview }}
+		{{ dict(image=images[2], section=('01', 'WEB'), project=('02', 'INTERWEST')) | preview }}
+	</div>
+	<div class="row">
+		{{ dict(image=images[3], section=('01', 'WEB'), project=('04', 'NOCTILUCA')) | preview }}
+		{{ dict(image=images[4], section=('02', 'PRINT'), project=('04', 'GENETIC')) | preview }}
+		{{ dict(image=images[5], section=('02', 'PRINT'), project=('03', 'M_D')) | preview }}
+	</div>
+	<div class="row">
+		{{ dict(image=images[6], section=('03', 'PACKAGING'), project=('02', 'KNACK')) | preview }}
+		{{ dict(image=images[7], section=('01', 'WEB'), project=('01', 'INMOBI')) | preview }}
+		{{ dict(image=images[8], section=('02', 'PRINT'), project=('01', 'BARE')) | preview }}
+	</div>
 {% endblock %}
