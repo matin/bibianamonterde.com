@@ -1,11 +1,13 @@
+@import "bootstrap/variables.less";
+
 .preview {
 	height: 200px;
 	color: white;
 
 	& span.orange {
-		display: none;
+/*		display: none;
 	}
-	&:hover span.orange {
+	&:hover span.orange { */
 		display: block;
 		background: #F58426;
 			height: 200px;
@@ -15,7 +17,14 @@
 		line-height: 108px;
 		margin-left: 30px;
 		& .section {
-			font-size: 68px;
+			font-size: 58px;
+			font-family: @serifFontFamily;
+		}
+		& .slash {
+			font-family: @serifFontFamily;
+			font-size: 70px;
+			vertical-align: -1px;
+			margin-left: 3px;
 		}
 		& .project {
 			font-size: 70px;
@@ -32,5 +41,28 @@
 		font-style: italic;
 		line-height: 67px;
 	}
+}
 
+.nav {
+	margin-top: 25px;
+	margin-left: 5px;
+
+	.name {
+		font-family: @serifFontFamily;
+		font-size: 24px;
+		line-height: 28px;
+		letter-spacing: 1px;
+	}
+
+	.title {
+		float: right;
+		margin-right: 44px;
+		font-size: 25px;
+		font-style: italic;
+		font-weight: 200;
+		color: #808080;
+		line-height: 25px;
+		margin-top: 1px;
+		letter-spacing: 2px
+	}
 }

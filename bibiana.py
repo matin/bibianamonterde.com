@@ -14,7 +14,8 @@ def preview(kwargs):
 		<span class="orange">
             <span class="number">
     			<span class="section">{section[0]}</span>
-    			<span class="project">/{project[0]}</span>
+                <span class="slash">/</span>
+    			<span class="project">{project[0]}</span>
   		    </span>
             <span class="text">
     			<span class="section">{section[1]}</span>
