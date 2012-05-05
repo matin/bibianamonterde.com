@@ -1,13 +1,26 @@
-.home {
+.preview {
 	height: 200px;
-	background-image:url('/static/img/home/01.png');
-	font-size: 20px;
-	& span{ display: none;}
 
-	&:hover span {
+	& span.orange {
+		display: none;
+	}
+	&:hover span.orange {
 		display: block;
-		background: orange;
-		height: 200px;
-		opacity: .5;
+		background: #F58426;
+			height: 200px;
+		opacity: .95;
+	}
+
+	& span.text {
+		line-height: 108px;
+		margin-left: 30px;
+		& .section {
+			font-size: 68px;
+		}
+		& .project {
+			font-size: 70px;
+			font-style: italic;
+			font-weight: 200;
+		}
 	}
 }
