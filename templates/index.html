@@ -29,64 +29,19 @@
 			<div class="span12">0</div>
 			<div class="span36">
 				<div class="row">
-					<div class="span12 preview" style="background-image:url('{{ images[0] }}');">
-						<span class="orange"><span class="text">
-							<span class="section">01</span>
-							<span class="project">/03</span>
-						</span></span>
-					</div>
-					<div class="span12 preview" style="background-image:url('{{ images[1] }}');">
-						<span class="orange"><span class="text">
-							<span class="section">01</span>
-							<span class="project">/05</span>
-						</span></span>
-					</div>
-					<div class="span12 preview" style="background-image:url('{{ images[2] }}');">
-						<span class="orange"><span class="text">
-							<span class="section">01</span>
-							<span class="project">/02</span>
-						</span></span>
-					</div>
+					{{ dict(image=images[0], section=('01', 'WEB'), project=('03', 'MARKETO')) | preview }}
+					{{ dict(image=images[1], section=('01', 'WEB'), project=('05', 'NUMENTA')) | preview }}
+					{{ dict(image=images[2], section=('01', 'WEB'), project=('02', 'INTERWEST')) | preview }}
 				</div>
 				<div class="row">
-					<div class="span12 preview" style="background-image:url('{{ images[3] }}');">
-						<span class="orange"><span class="text">
-							<span class="section">01</span>
-							<span class="project">/04</span>
-						</span></span>
-					</div>
-					<div class="span12 preview" style="background-image:url('{{ images[4] }}');">
-						<span class="orange"><span class="text">
-							<span class="section">02</span>
-							<span class="project">/04</span>
-						</span></span>
-					</div>
-					<div class="span12 preview" style="background-image:url('{{ images[5] }}');">
-						<span class="orange"><span class="text">
-							<span class="section">04</span>
-							<span class="project">/07</span>
-						</span></span>
-					</div>
+					{{ dict(image=images[3], section=('01', 'WEB'), project=('04', 'NOCTILUCA')) | preview }}
+					{{ dict(image=images[4], section=('02', 'PRINT'), project=('04', 'GENETIC')) | preview }}
+					{{ dict(image=images[5], section=('02', 'PRINT'), project=('03', 'M_D')) | preview }}
 				</div>
 				<div class="row">
-					<div class="span12 preview" style="background-image:url('{{ images[6] }}');">
-						<span class="orange"><span class="text">
-							<span class="section">03</span>
-							<span class="project">/02</span>
-						</span></span>
-					</div>
-					<div class="span12 preview" style="background-image:url('{{ images[7] }}');">
-						<span class="orange"><span class="text">
-							<span class="section">01</span>
-							<span class="project">/01</span>
-						</span></span>
-					</div>
-					<div class="span12 preview" style="background-image:url('{{ images[8] }}');">
-						<span class="orange"><span class="text">
-							<span class="section">02</span>
-							<span class="project">/01</span>
-						</span></span>
-					</div>
+					{{ dict(image=images[6], section=('03', 'PACKAGING'), project=('02', 'KNACK')) | preview }}
+					{{ dict(image=images[7], section=('01', 'WEB'), project=('01', 'INMOBI')) | preview }}
+					{{ dict(image=images[8], section=('02', 'PRINT'), project=('01', 'BARE')) | preview }}
 				</div>
 			</div>
 		</div>
