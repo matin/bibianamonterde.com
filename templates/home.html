@@ -2,7 +2,7 @@
 
 {% block menu %}
 	<ol>
-		{% for number, name in [('01', 'WEB'), ('02', 'PRINT'), ('03', 'PACKAGING')] %}
+		{% for number, name in sections %}
 			{{ dict(number=number, name=name) | menu_section }}
 		{% endfor %}
 	</ol>

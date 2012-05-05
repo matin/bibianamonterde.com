@@ -30,20 +30,25 @@ def preview_filter(args):
 def menu_section_filter(args):
     snippet = """
     <li class="section">
-		<a href="/{name_lower}">
+		<a href="/{number}{name}">
 			<span class="number">{number}</span>
 			<span class="slash">/</span>
-			<span class="name">{name}</span>
+			<span class="name">{name_upper}</span>
 		</a>
 	</li>"""
-    return Markup(snippet.format(name_lower=args['name'].lower(), **args))
+    return Markup(snippet.format(name_upper=args['name'].upper(), **args))
 
 
 @app.route('/')
 def home():
-    files = os.listdir('static/img/home')
-    images = ['/static/img/home/' + file for file in files if file.endswith('.png')]
-    return render_template('home.html', images=images)
+    img_location = 'static/img/home'
+    files = os.listdir(img_location)
+    images = ['/{}/{}'.format(img_location, image) for image in files if image.endswith('.png')]
+
+    section_location = 'static/img'
+    files = os.listdir(section_location)
+    sections = [(section[:2], section[2:]) for section in files if section[:2].isdigit()]
+    return render_template('home.html', images=images, sections=sections)
 
 
 @app.route('/<section_name>')
