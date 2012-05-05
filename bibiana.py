@@ -1,6 +1,6 @@
 import os
 
-from flask import abort, Flask, render_template
+from flask import abort, Flask, request, render_template
 from jinja2 import Markup
 
 
@@ -28,15 +28,22 @@ def preview_filter(args):
 
 @app.template_filter('menu_section')
 def menu_section_filter(args):
+    section_class = ''
+    if request.url.endswith('{number}{name}'.format(**args)):
+        section_class = 'selected'
     snippet = """
     <li class="section">
-		<a href="/{number}{name}">
+		<a href="/{number}{name}" class="{section_class}">
 			<span class="number">{number}</span>
 			<span class="slash">/</span>
 			<span class="name">{name_upper}</span>
 		</a>
-	</li>"""
-    return Markup(snippet.format(name_upper=args['name'].upper(), **args))
+	</li>""".format(
+        name_upper=args['name'].upper(),
+        section_class=section_class,
+        **args
+    )
+    return Markup(snippet)
 
 
 @app.route('/')
@@ -58,7 +65,12 @@ def section(section_name):
         abort(404)
     files = os.listdir(img_location)
     images = ['/{}/{}'.format(img_location, file) for file in files if file.endswith('.png')]
-    template = render_template('section.html', images=images)
+
+    section_location = 'static/img'
+    files = os.listdir(section_location)
+    sections = [(section[:2], section[2:]) for section in files if section[:2].isdigit()]
+
+    template = render_template('section.html', images=images, sections=sections)
     return template
 
 
