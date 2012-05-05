@@ -2,7 +2,6 @@ import os
 
 from flask import abort, Flask, render_template
 from jinja2 import Markup
-from jinja2.exceptions import TemplateNotFound
 
 
 app = Flask(__name__)
@@ -49,12 +48,12 @@ def home():
 
 @app.route('/<section_name>')
 def section(section_name):
-    files = os.listdir('static/img/home')
-    images = ['/static/img/home/' + file for file in files if file.endswith('.png')]
-    try:
-        template = render_template('{}.html'.format(section_name), images=images)
-    except TemplateNotFound:
+    img_location = 'static/img/{}'.format(section_name)
+    if not os.path.exists(img_location):
         abort(404)
+    files = os.listdir(img_location)
+    images = ['/{}/{}'.format(img_location, file) for file in files if file.endswith('.png')]
+    template = render_template('section.html', images=images)
     return template
 
 

@@ -13,7 +13,7 @@
 	height: @previewHeight;
 	color: white;
 
-	& span.orange {
+	span.orange {
 		display: none;
 	}
 	&:hover span.orange {
@@ -22,27 +22,27 @@
 			height: @previewHeight;
 		opacity: .95;
 	}
-	& .number {
+	.number {
 		line-height: 108px;
 		margin-left: 30px;
-		& .section {
+		.section {
 			font-size: 58px;
 			font-family: @serifFontFamily;
 		}
-		& .slash {
+		.slash {
 			font-family: @serifFontFamily;
 			font-size: 70px;
 			vertical-align: -1px;
 			margin-left: 3px;
 		}
-		& .project {
+		.project {
 			font-size: 70px;
 			font-style: italic;
 			font-weight: 200;
 		}
 	}
 
-	& span.text {
+	span.text {
 		margin-left: 30px;
 		font-size: 12px;
 		letter-spacing: 1px;
@@ -56,11 +56,14 @@
 	margin-top: @navMargin;
 	margin-left: @navMargin - 20px;
 
+	a:hover { text-decoration: none; }
 	.bibiana {
 		font-family: @serifFontFamily;
 		font-size: 24px;
 		line-height: 28px;
 		letter-spacing: 1px;
+		color: black;
+		text-decoration: none;
 	}
 
 	.job-title {
@@ -79,38 +82,38 @@
 		position: absolute;
 		top: 176px;
 
-		& ol {
+		ol {
 			list-style: none;
 			margin: 0;
-			& ol {
+			ol {
 				margin-left: 28px;
 			}
 		}
 
-		& li {
+		li {
 			line-height: 11px;
 			margin-bottom: 11px;
 		}
 
-		& .section {
-			& a {
+		.section {
+			a {
 				color: black;
 				text-decoration: none;
-				&:hover, .selected{
+				&:hover, &.selected {
 					border-bottom: 1px solid black;
 					padding-bottom: 2px;
 				}
 			}
-			& .number {
+			.number {
 				font-family: @serifFontFamily;
 				font-size: 10px;
 				letter-spacing: 1px;
 			}
-			& .slash {
+			.slash {
 				font-family: @serifFontFamily;
 				font-size: 11px;
 			}
-			& .name {
+			.name {
 				font-size: 11px;
 				font-style: italic;
 				letter-spacing: 1px;
