@@ -1,7 +1,15 @@
 @import "bootstrap/variables.less";
 
+
+@orange: #F58426;
+@grey: #808080;
+@pageHeight: 600px;
+@navMargin: 25px;
+@previewHeight: 200px;
+
+
 .preview {
-	height: 200px;
+	height: @previewHeight;
 	color: white;
 
 	& span.orange {
@@ -9,8 +17,8 @@
 	}
 	&:hover span.orange {
 		display: block;
-		background: #F58426;
-			height: 200px;
+		background: @orange;
+			height: @previewHeight;
 		opacity: .95;
 	}
 	& span.number {
@@ -44,8 +52,8 @@
 }
 
 .nav {
-	margin-top: 25px;
-	margin-left: 5px;
+	margin-top: @navMargin;
+	margin-left: @navMargin - 20px;
 
 	.name {
 		font-family: @serifFontFamily;
@@ -60,9 +68,23 @@
 		font-size: 25px;
 		font-style: italic;
 		font-weight: 200;
-		color: #808080;
+		color: @grey;
 		line-height: 25px;
 		margin-top: 1px;
 		letter-spacing: 2px
 	}
+
+	.email a {
+		text-decoration: none;
+		color: @orange;
+		font-style: italic;
+		font-size: 11px;
+		line-height: 11px;
+		position: absolute;
+		top: @pageHeight - @navMargin - 11px;
+		letter-spacing: 1px;
+	}
 }
+
+
+
