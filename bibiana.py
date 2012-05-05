@@ -26,6 +26,19 @@ def preview_filter(args):
     return Markup(snippet.format(**args))
 
 
+@app.template_filter('menu_section')
+def menu_section_filter(args):
+    snippet = """
+    <li class="section">
+		<a href="#">
+			<span class="number">{number}</span>
+			<span class="slash">/</span>
+			<span class="name">{name}</span>
+		</a>
+	</li>"""
+    return Markup(snippet.format(**args))
+
+
 @app.route('/')
 def home():
     files = os.listdir('static/img/home')

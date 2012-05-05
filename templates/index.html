@@ -3,13 +3,7 @@
 {% block menu %}
 	<ol>
 		{% for number, name in [('01', 'WEB'), ('02', 'PRINT'), ('03', 'PACKAGING')] %}
-			<li class="section">
-				<a href="#">
-					<span class="number">{{ number }}</span>
-					<span class="slash">/</span>
-					<span class="name">{{ name }}</span>
-				</a>
-			</li>
+			{{ dict(number=number, name=name) | menu_section }}
 		{% endfor %}
 	</ol>
 {% endblock %}
