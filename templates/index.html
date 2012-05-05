@@ -2,27 +2,15 @@
 
 {% block menu %}
 	<ol>
-		<li class="section">
-			<a href="#">
-				<span class="number">01</span>
-				<span class="slash">/</span>
-				<span class="name">WEB</span>
-			</a>
-		</li>
-		<!--ol>
-			<li>01 INMOBI</li>
-			<li>02 INTERWEST</li>
-		</ol-->
-		<li class="section">
-			<a href="#">
-				<span class="number">02</span>
-				<span class="slash">/</span>
-				<span class="name">PRINT</span>
-			</a>
-		</li>
-		<ol>
-			<li>01 BARE more</li>
-		</ol>
+		{% for number, name in [('01', 'WEB'), ('02', 'PRINT'), ('03', 'PACKAGING')] %}
+			<li class="section">
+				<a href="#">
+					<span class="number">{{ number }}</span>
+					<span class="slash">/</span>
+					<span class="name">{{ name }}</span>
+				</a>
+			</li>
+		{% endfor %}
 	</ol>
 {% endblock %}
 

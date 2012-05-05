@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 
 @app.template_filter('preview')
-def preview(kwargs):
+def preview_filter(args):
     snippet = """
     <div class="span12 preview" style="background-image:url('{image}');">
 		<span class="orange">
@@ -23,7 +23,7 @@ def preview(kwargs):
             </span>
         </span>
     </div>"""
-    return Markup(snippet.format(**kwargs))
+    return Markup(snippet.format(**args))
 
 
 @app.route('/')
