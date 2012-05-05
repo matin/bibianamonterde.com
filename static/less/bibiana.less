@@ -1,3 +1,13 @@
-body {
-	padding-top: 0px;
+.home {
+	height: 200px;
+	background-image:url('/static/img/home/01.png');
+	font-size: 20px;
+	& span{ display: none;}
+
+	&:hover span {
+		display: block;
+		background: orange;
+		height: 200px;
+		opacity: .5;
+	}
 }
