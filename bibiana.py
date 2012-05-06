@@ -34,7 +34,7 @@ def get_projects(section):
 
     images = os.listdir(section_folder)
     project_re = re.compile("""
-        \d\.  # leading digit for sorting
+        [^.]+\.  # set for order
         (?P<section_number>\d{2})(?P<section_name>[^.]+)\.  # section
         (?P<project_number>\d{2})(?P<project_name>[^.]+)\.  # project
         (?:png|jpg)$""", re.VERBOSE)
