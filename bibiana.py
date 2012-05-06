@@ -47,31 +47,18 @@ def menu_section_filter(args):
 
 
 @app.route('/')
-def home():
-    img_location = 'static/img/home'
-    files = os.listdir(img_location)
-    images = ['/{}/{}'.format(img_location, image) for image in files if image.endswith('.png')]
-
-    section_location = 'static/img'
-    files = os.listdir(section_location)
-    sections = [(section[:2], section[2:]) for section in files if section[:2].isdigit()]
-    return render_template('home.html', images=images, sections=sections)
-
-
-@app.route('/<section_name>')
-def section(section_name):
-    img_location = 'static/img/{}'.format(section_name)
-    if not os.path.isdir(img_location):
+@app.route('/<section>')
+def preview(section='home'):
+    location = 'static/img/{}'.format(section)
+    if not os.path.isdir(location):
         abort(404)
-    files = os.listdir(img_location)
-    images = ['/{}/{}'.format(img_location, file) for file in files if file.endswith('.png')]
+    files = os.listdir(location)
+    images = ['/{}/{}'.format(location, image) for image in files if image.endswith('.png')]
 
     section_location = 'static/img'
     files = os.listdir(section_location)
     sections = [(section[:2], section[2:]) for section in files if section[:2].isdigit()]
-
-    template = render_template('section.html', images=images, sections=sections)
-    return template
+    return render_template('preview.html', images=images, sections=sections)
 
 
 if __name__ == '__main__':
