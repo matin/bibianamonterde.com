@@ -61,7 +61,7 @@ def home():
 @app.route('/<section_name>')
 def section(section_name):
     img_location = 'static/img/{}'.format(section_name)
-    if not os.path.exists(img_location):
+    if not os.path.isdir(img_location):
         abort(404)
     files = os.listdir(img_location)
     images = ['/{}/{}'.format(img_location, file) for file in files if file.endswith('.png')]
