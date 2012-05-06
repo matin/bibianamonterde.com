@@ -29,7 +29,6 @@ def build_tree():
 
 
 def get_projects(section):
-    # support spaces in names
     section_folder = os.path.join(app.static_folder, 'img', section)
     projects = defaultdict(dict)
 
@@ -46,6 +45,8 @@ def get_projects(section):
         m = project_re.match(image)
         if m:
             projects[image] = m.groupdict()
+            projects[image]['section_name'] = projects[image]['section_name'].replace('-',' ')
+            projects[image]['project_name'] = projects[image]['project_name'].replace('-',' ')
             projects[image]['url'] = ('/{section_number}{section_name}/'
                 '{project_number}{project_name}'.format(**m.groupdict()))
         projects[image]['image_url'] = '{}/img/{}/{}'.format(
