@@ -27,18 +27,24 @@
 
 {% block main %}
 	<div class="row">
-		{{ dict(image=images[0], section=('01', 'WEB'), project=('03', 'MARKETO')) | preview }}
-		{{ dict(image=images[1], section=('01', 'WEB'), project=('05', 'NUMENTA')) | preview }}
-		{{ dict(image=images[2], section=('01', 'WEB'), project=('02', 'INTERWEST')) | preview }}
+	{% for _, project in projects|dictsort %}
+	    <div class="span12 preview" style="background-image:url('{{ project['image_url'] }}');">
+			<span class="orange">
+	            <span class="number">
+	    			<span class="section">{{ project['section_number'] }}</span>
+	                <span class="slash">/</span>
+	    			<span class="project">{{ project['project_number'] }}</span>
+	  		    </span>
+	            <span class="text">
+	    			<span class="section">{{ project['section_name']|upper }}</span>
+	    			<span class="project">/ {{ project['project_name']|upper }}</span>
+	            </span>
+	        </span>
+	    </div>
+	{% if loop.index in [3, 6] %}
 	</div>
 	<div class="row">
-		{{ dict(image=images[3], section=('01', 'WEB'), project=('04', 'NOCTILUCA')) | preview }}
-		{{ dict(image=images[4], section=('02', 'PRINT'), project=('04', 'GENETIC')) | preview }}
-		{{ dict(image=images[5], section=('02', 'PRINT'), project=('03', 'M_D')) | preview }}
-	</div>
-	<div class="row">
-		{{ dict(image=images[6], section=('03', 'PACKAGING'), project=('02', 'KNACK')) | preview }}
-		{{ dict(image=images[7], section=('01', 'WEB'), project=('01', 'INMOBI')) | preview }}
-		{{ dict(image=images[8], section=('02', 'PRINT'), project=('01', 'BARE')) | preview }}
+	{% endif %}
+	{% endfor %}
 	</div>
 {% endblock %}
