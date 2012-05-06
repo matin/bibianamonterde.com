@@ -2,9 +2,44 @@
 
 {% block menu %}
 	<ol>
-		{% for number, name in sections %}
-			{{ dict(number=number, name=name) | menu_section }}
+		{% for (section_number, section_name), projects in tree|dictsort %}
+		    <li class="section">
+				<a href="/{{ section_number }}{{ section_name }}" class="">
+					<span class="number">{{ section_number }}</span>
+					<span class="slash">/</span>
+					<span class="name">{{ section_name|upper }}</span>
+				</a>
+				<ol>
+					{% for project_number, project_name in projects|sort %}
+						<li class="project">
+							<a href="/{{ section_number }}{{ section_name }}/{{ project_number }}{{ project_name }}">
+								<span class="number">{{ project_number }}</span>
+								<span class="name">{{ project_name|upper }}</span>
+							</a>
+						</li>
+					{% endfor %}
+				</ol>
+			</li>
 		{% endfor %}
+	</ol>
+{#			
+    <li class="section">
+		<a href="/02print" class="">
+			<span class="number">02</span>
+			<span class="slash">/</span>
+			<span class="name">PRINT</span>
+		</a>
+	</li>
+		
+			
+    <li class="section">
+		<a href="/03packaging" class="">
+			<span class="number">03</span>
+			<span class="slash">/</span>
+			<span class="name">PACKAGING</span>
+		</a>
+	</li>
+		
 			<ol>
 				<li class="project">
 					<a href="#">
@@ -32,6 +67,8 @@
 				</li>
 			</ol>
 	</ol>
+	</ol>
+	#}
 {% endblock %}
 
 

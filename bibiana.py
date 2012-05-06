@@ -1,3 +1,4 @@
+from collections import defaultdict
 import os
 
 from flask import abort, Flask, request, render_template
@@ -5,6 +6,20 @@ from jinja2 import Markup
 
 
 app = Flask(__name__)
+
+
+img_folder = os.path.join(app.static_folder, 'img')
+tree = defaultdict(list)
+
+for section in os.listdir(img_folder):
+    section_folder = os.path.join(img_folder, section)
+    if not (section[:2].isdigit() and os.path.isdir(section_folder)):
+        continue
+    for project in os.listdir(section_folder):
+        project_folder = os.path.join(section_folder, project)
+        if not (project[:2].isdigit() and os.path.isdir(project_folder)):
+            continue
+        tree[(section[:2], section[2:])].append((project[:2], project[2:]))
 
 
 @app.template_filter('preview')
@@ -55,10 +70,7 @@ def preview(section='home'):
     files = os.listdir(location)
     images = ['/{}/{}'.format(location, image) for image in files if image.endswith('.png')]
 
-    section_location = 'static/img'
-    files = os.listdir(section_location)
-    sections = [(section[:2], section[2:]) for section in files if section[:2].isdigit()]
-    return render_template('preview.html', images=images, sections=sections)
+    return render_template('grid.html', tree=tree, images=images)
 
 
 if __name__ == '__main__':
