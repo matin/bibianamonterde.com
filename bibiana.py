@@ -29,6 +29,7 @@ def build_tree():
 
 
 def get_projects(section):
+    # support spaces in names
     section_folder = os.path.join(app.static_folder, 'img', section)
     projects = defaultdict(dict)
 
