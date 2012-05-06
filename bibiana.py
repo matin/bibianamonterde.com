@@ -53,7 +53,7 @@ def preview(section='home'):
     files = os.listdir(location)
     images = ['/{}/{}'.format(location, image) for image in files if image.endswith('.png')]
 
-    return render_template('grid.html', tree=tree, images=images)
+    return render_template('grid.html', tree=tree, images=images, section=section)
 
 
 if __name__ == '__main__':

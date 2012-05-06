@@ -4,13 +4,13 @@
 	<ol>
 		{% for (section_number, section_name), projects in tree|dictsort %}
 		    <li class="section">
-				<a href="/{{ section_number }}{{ section_name }}" class="">
+				<a href="/{{ section_number }}{{ section_name }}" class="{{ 'selected' if section_number + section_name == section }}">
 					<span class="number">{{ section_number }}</span>
 					<span class="slash">/</span>
 					<span class="name">{{ section_name|upper }}</span>
 				</a>
 				<ol>
-					{% for project_number, project_name in projects|sort %}
+					{% for project_number, project_name in projects|sort if section_number + section_name == section %}
 						<li class="project">
 							<a href="/{{ section_number }}{{ section_name }}/{{ project_number }}{{ project_name }}">
 								<span class="number">{{ project_number }}</span>
