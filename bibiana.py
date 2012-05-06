@@ -44,26 +44,6 @@ def preview_filter(args):
     return Markup(snippet.format(**args))
 
 
-@app.template_filter('menu_section')
-def menu_section_filter(args):
-    section_class = ''
-    if request.url.endswith('{number}{name}'.format(**args)):
-        section_class = 'selected'
-    snippet = """
-    <li class="section">
-		<a href="/{number}{name}" class="{section_class}">
-			<span class="number">{number}</span>
-			<span class="slash">/</span>
-			<span class="name">{name_upper}</span>
-		</a>
-	</li>""".format(
-        name_upper=args['name'].upper(),
-        section_class=section_class,
-        **args
-    )
-    return Markup(snippet)
-
-
 @app.route('/')
 @app.route('/<section>')
 def preview(section='home'):
