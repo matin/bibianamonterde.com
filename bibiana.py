@@ -55,25 +55,6 @@ def get_projects(section):
 TREE = build_tree()
 
 
-@app.template_filter('preview')
-def preview_filter(args):
-    snippet = """
-    <div class="span12 preview" style="background-image:url('{image}');">
-		<span class="orange">
-            <span class="number">
-    			<span class="section">{section[0]}</span>
-                <span class="slash">/</span>
-    			<span class="project">{project[0]}</span>
-  		    </span>
-            <span class="text">
-    			<span class="section">{section[1]}</span>
-    			<span class="project">/ {project[1]}</span>
-            </span>
-        </span>
-    </div>"""
-    return Markup(snippet.format(**args))
-
-
 @app.route('/')
 @app.route('/<section>')
 def grid(section='home'):
