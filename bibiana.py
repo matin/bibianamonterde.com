@@ -15,11 +15,14 @@ for section in os.listdir(img_folder):
     section_folder = os.path.join(img_folder, section)
     if not (section[:2].isdigit() and os.path.isdir(section_folder)):
         continue
+    section = (section[:2], section[2:].replace('-', ' '))
+
     for project in os.listdir(section_folder):
         project_folder = os.path.join(section_folder, project)
         if not (project[:2].isdigit() and os.path.isdir(project_folder)):
             continue
-        tree[(section[:2], section[2:])].append((project[:2], project[2:]))
+        project = (project[:2], project[2:].replace('-', ' '))
+        tree[section].append(project)
 
 
 @app.template_filter('preview')
