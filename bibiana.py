@@ -2,17 +2,15 @@ from collections import defaultdict
 import re
 import os
 
-from flask import abort, Flask, request, render_template
-from jinja2 import Markup
+from flask import abort, Flask, render_template
 
 
 app = Flask(__name__)
 
 
-img_folder = os.path.join(app.static_folder, 'img')
-tree = defaultdict(list)
-
 def build_tree():
+    img_folder = os.path.join(app.static_folder, 'img')
+    tree = defaultdict(list)
     for section in os.listdir(img_folder):
         section_folder = os.path.join(img_folder, section)
         if not (section[:2].isdigit() and os.path.isdir(section_folder)):
@@ -60,13 +58,10 @@ TREE = build_tree()
 @app.route('/')
 @app.route('/<section>')
 def grid(section='home'):
-    location = 'static/img/{}'.format(section)
-    if not os.path.isdir(location):
+    if not os.path.isdir('static/img/{}'.format(section)):
         abort(404)
-    files = os.listdir(location)
-    images = ['/{}/{}'.format(location, image) for image in files if image.endswith('.png')]
-
-    return render_template('grid.html', tree=TREE, projects=get_projects(section), images=images, section=section)
+    return render_template('grid.html', tree=TREE, section=section,
+        projects=get_projects(section))
 
 
 if __name__ == '__main__':
