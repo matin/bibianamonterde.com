@@ -26,27 +26,23 @@
 
 
 {% block main %}
-	<div class="row">
 	{% for _, project in projects|dictsort %}
-		{% if project.get('url') %}<a href="{{ project['url'] }}">{% endif %}
-		    <div class="span12 preview" style="background-image:url('{{ project['image_url'] }}');">
-				<span class="orange {{ 'hover' if project.get('url') }}">
-		            <span class="number">
-		    			<span class="section">{{ project['section_number'] }}</span>
-		                <span class="slash">/</span>
-		    			<span class="project">{{ project['project_number'] }}</span>
-		  		    </span>
-		            <span class="text">
-		    			<span class="section">{{ project['section_name']|upper }}</span>
-		    			<span class="project">/ {{ project['project_name']|upper }}</span>
-		            </span>
-		        </span>
-		    </div>
-			{% if project.get('url') %}</a>{% endif %}
-	{% if loop.index in [3, 6] %}
-	</div>
-	<div class="row">
-	{% endif %}
-	{% endfor %}
-	</div>
+		{% if loop.index0 is divisibleby 3 %} <div class="row"> {% endif %}
+			{% if project.get('url') %}<a href="{{ project['url'] }}">{% endif %}
+                <div class="span12 preview" style="background-image:url('{{ project['image_url'] }}');">
+                    <span class="orange {{ 'hover' if project.get('url') }}">
+                        <span class="number">
+                            <span class="section">{{ project['section_number'] }}</span>
+                            <span class="slash">/</span>
+                            <span class="project">{{ project['project_number'] }}</span>
+                        </span>
+                        <span class="text">
+                            <span class="section">{{ project['section_name']|upper }}</span>
+                            <span class="project">/ {{ project['project_name']|upper }}</span>
+                        </span>
+                    </span>
+                </div>
+            {% if project.get('url') %}</a>{% endif %}
+        {% if loop.index is divisibleby 3 %} </div> {% endif %}
+    {% endfor %}
 {% endblock %}
