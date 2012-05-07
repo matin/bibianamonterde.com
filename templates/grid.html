@@ -43,6 +43,16 @@
                     </span>
                 </div>
             {% if project.get('url') %}</a>{% endif %}
-        {% if loop.index is divisibleby 3 %} </div> {% endif %}
+        {% if loop.index is divisibleby 3 %} </div> {# endrow #}{% endif %}
     {% endfor %}
+    {% if projects.keys()|length == 8 %}
+        <div class="span12 bottom-right">
+            <div class="section">
+                <span class="number">01</span>
+                <span class="slash">/</span>
+                <span class="name">WEB</span>
+            </div>
+        </div>
+    </div> {# endrow #}
+    {% endif %}
 {% endblock %}

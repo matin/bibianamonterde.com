@@ -9,146 +9,176 @@
 @serifFontFamily: Prata, Georgia, "Times New Roman", Times, serif;
 
 
+body {
+    height: @pageHeight;
+}
+
 .row a {
-	text-decoration: none;
+    text-decoration: none;
 }
 
 
 .preview {
-	height: @previewHeight;
-	color: white;
+    height: @previewHeight;
+    color: white;
 
-	span.orange {
-		display: none;
-	}
-	&:hover span.orange.hover {
-		display: block;
-		background: @orange;
-			height: @previewHeight;
-		opacity: .95;
-	}
-	.number {
-		line-height: 108px;
-		margin-left: 30px;
-		.section {
-			font-size: 58px;
-			font-family: @serifFontFamily;
-		}
-		.slash {
-			font-family: @serifFontFamily;
-			font-size: 70px;
-			vertical-align: -1px;
-			margin-left: 3px;
-		}
-		.project {
-			font-size: 70px;
-			font-style: italic;
-			font-weight: 200;
-		}
-	}
+    span.orange {
+        display: none;
+    }
+    &:hover span.orange.hover {
+        display: block;
+        background: @orange;
+        height: @previewHeight;
+        opacity: .95;
+    }
+    .number {
+        line-height: 108px;
+        margin-left: 30px;
+        .section {
+            font-size: 58px;
+            font-family: @serifFontFamily;
+        }
+        .slash {
+            font-family: @serifFontFamily;
+            font-size: 70px;
+            vertical-align: -1px;
+            margin-left: 3px;
+        }
+        .project {
+            font-size: 70px;
+            font-style: italic;
+            font-weight: 200;
+        }
+    }
 
-	span.text {
-		margin-left: 30px;
-		font-size: 12px;
-		letter-spacing: 1px;
-		font-weight: 200;
-		font-style: italic;
-		line-height: 67px;
-	}
+    span.text {
+        margin-left: 30px;
+        font-size: 12px;
+        letter-spacing: 1px;
+        font-weight: 200;
+        font-style: italic;
+        line-height: 67px;
+    }
+}
+
+.bottom-right {
+    background: @orange;
+    color: white;
+    height: @pageHeight / 3;
+    .section {
+        margin: 35px 0 0 30px;
+        .number {
+            font-size: 32px;
+            font-family: @serifFontFamily;
+            letter-spacing: 3px;
+        }
+        .slash {
+            font-family: @serifFontFamily;
+            font-size: 37px;
+            vertical-align: -1px;
+            margin-left: 1px;
+        }
+        .name {
+            font-size: 35px;
+            font-style: italic;
+            font-weight: 200;
+            letter-spacing: 3px;
+        }
+    }
 }
 
 .nav {
-	margin-top: @navMargin;
-	margin-left: @navMargin - 20px;
+    margin-top: @navMargin;
+    margin-left: @navMargin - 20px;
 
-	a:hover { text-decoration: none; }
-	.bibiana {
-		font-family: @serifFontFamily;
-		font-size: 24px;
-		line-height: 28px;
-		letter-spacing: 1px;
-		color: black;
-		text-decoration: none;
-	}
+    a:hover { text-decoration: none; }
+    .bibiana {
+        font-family: @serifFontFamily;
+        font-size: 24px;
+        line-height: 28px;
+        letter-spacing: 1px;
+        color: black;
+        text-decoration: none;
+    }
 
-	.job-title {
-		float: right;
-		margin-right: 44px;
-		font-size: 25px;
-		font-style: italic;
-		font-weight: 200;
-		color: @grey;
-		line-height: 25px;
-		margin-top: 1px;
-		letter-spacing: 2px
-	}
+    .job-title {
+        float: right;
+        margin-right: 44px;
+        font-size: 25px;
+        font-style: italic;
+        font-weight: 200;
+        color: @grey;
+        line-height: 25px;
+        margin-top: 1px;
+        letter-spacing: 2px
+    }
 
-	.menu {
-		position: absolute;
-		top: 176px;
+    .menu {
+        position: absolute;
+        top: 176px;
 
-		ol {
-			list-style: none;
-			margin: 0;
-			ol {
-				margin-left: 28px;
-				margin-top: 11px;
-			}
-		}
+        ol {
+            list-style: none;
+            margin: 0;
+            ol {
+                margin-left: 28px;
+                margin-top: 11px;
+            }
+        }
 
-		li {
-			line-height: 11px;
-			margin-bottom: 11px;
-		}
+        li {
+            line-height: 11px;
+            margin-bottom: 11px;
+        }
 
-		a {
-			color: black;
-			text-decoration: none;
-			&:hover, &.selected {
-				border-bottom: 1px solid black;
-				padding-bottom: 2px;
-			}
-		}
-		.number {
-			font-family: @serifFontFamily;
-			font-size: 10px;
-			letter-spacing: 1px;
-		}
-		.slash {
-			font-family: @serifFontFamily;
-			font-size: 11px;
-		}
-		.name {
-			font-size: 11px;
-			font-style: italic;
-			letter-spacing: 1px;
-			color: @grey;
-		}
-		.project {
-			margin-bottom: 7px;
-			a:hover {
-				color: @orange;
-				border: 0;
-				.name { color: @orange; }
-			}
-			.number {
-				font-family: @sansFontFamily;
-				font-style: italic;
-				font-size: 11px;
-			}
-		}
-	}
+        a {
+            color: black;
+            text-decoration: none;
+            &:hover, &.selected {
+                border-bottom: 1px solid black;
+                padding-bottom: 2px;
+            }
+        }
+        .number {
+            font-family: @serifFontFamily;
+            font-size: 10px;
+            letter-spacing: 1px;
+        }
+        .slash {
+            font-family: @serifFontFamily;
+            font-size: 11px;
+        }
+        .name {
+            font-size: 11px;
+            font-style: italic;
+            letter-spacing: 1px;
+            color: @grey;
+        }
+        .project {
+            margin-bottom: 7px;
+            a:hover {
+                color: @orange;
+                border: 0;
+                .name { color: @orange; }
+            }
+            .number {
+                font-family: @sansFontFamily;
+                font-style: italic;
+                font-size: 11px;
+            }
+        }
+    }
 
-	.email a {
-		text-decoration: none;
-		color: @orange;
-		font-style: italic;
-		font-size: 11px;
-		line-height: 11px;
-		position: absolute;
-		top: @pageHeight - @navMargin - 11px;
-		letter-spacing: 1px;
-		&:hover { text-decoration: underline; }
-		// TODO: try to use the same underline as the menu
-	}
+    .email a {
+        text-decoration: none;
+        color: @orange;
+        font-style: italic;
+        font-size: 11px;
+        line-height: 11px;
+        position: absolute;
+        top: @pageHeight - @navMargin - 11px;
+        letter-spacing: 1px;
+        &:hover { text-decoration: underline; }
+        // TODO: try to use the same underline as the menu
+    }
 }
