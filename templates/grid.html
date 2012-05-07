@@ -48,9 +48,9 @@
     {% if projects.keys()|length == 8 %}
         <div class="span12 bottom-right">
             <div class="section">
-                <span class="number">01</span>
+                <span class="number">{{ section[:2] }}</span>
                 <span class="slash">/</span>
-                <span class="name">WEB</span>
+                <span class="name">{{ section[2:]|upper }}</span>
             </div>
         </div>
     </div> {# endrow #}
