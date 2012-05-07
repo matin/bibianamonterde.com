@@ -25,7 +25,9 @@
             <div class="section">
                 <span class="number">{{ section[:2] }}</span>
                 <span class="slash">/</span>
-                <span class="name">{{ section[2:]|upper }}</span>
+                <span class="name">
+                    {{ section[2:]|upper if section[2:]|length <= 5 else section[2:6]|upper }}
+                </span>
             </div>
         </div>
     </div> {# endrow #}
