@@ -2,10 +2,12 @@ from collections import defaultdict
 import re
 import os
 
-from flask import abort, Flask, render_template
+from flask import (abort, Flask, redirect, render_template, request, session,
+    url_for)
 
 
 app = Flask(__name__)
+app.secret_key = 'e+moUemdz7GkrjiIb+xIp8M1szMrx7KNvBAO'
 
 
 def build_tree():
@@ -43,8 +45,10 @@ def get_projects(section):
         m = project_re.match(image)
         if m:
             projects[image] = m.groupdict()
-            projects[image]['section_name'] = projects[image]['section_name'].replace('-',' ')
-            projects[image]['project_name'] = projects[image]['project_name'].replace('-',' ')
+            projects[image]['section_name'] = (projects[image]['section_name']
+                .replace('-',' '))
+            projects[image]['project_name'] = (projects[image]['project_name']
+                .replace('-',' '))
             projects[image]['url'] = ('/{section_number}{section_name}/'
                 '{project_number}{project_name}'.format(**m.groupdict()))
         projects[image]['image_url'] = '{}/img/{}/{}'.format(
@@ -52,12 +56,48 @@ def get_projects(section):
     return projects
 
 
+def logged_in():
+    return 'authed' in session
+
+
+def requires_auth(controller):
+    def decorator(*args, **kwargs):
+        if not logged_in():
+            return redirect(url_for('index'))
+        else:
+            return controller(*args, **kwargs)
+
+
 TREE = build_tree()
 
 
+@app.route('/login')
+def login():
+    session['authed'] = 'true'
+    return redirect(url_for('index'))
+
+
+@app.route('/logout')
+def logout():
+    if logged_in():
+        session.pop('authed')
+    return redirect(url_for('index'))
+
+
 @app.route('/')
+def index():
+    if logged_in():
+        resp = render_template('grid.html', tree=TREE, section='home',
+            projects=get_projects('home'))
+    else:
+        resp = render_template('login.html', section='password',
+            projects=get_projects('password'))
+    return resp
+
+
+@requires_auth
 @app.route('/<section>')
-def grid(section='home'):
+def grid(section):
     if not os.path.isdir('static/img/{}'.format(section)):
         abort(404)
     return render_template('grid.html', tree=TREE, section=section,
