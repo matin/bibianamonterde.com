@@ -1,28 +1,39 @@
 {% extends "bibiana.html" %}
 
 {% block main %}
-	<div class="span24 landing" style="background-image:url('/static/img/{{ section }}/{{ project }}/landing.png');">
-	</div>
-	<div class="span12">
-		<div class="project-description">
-			<div class="number">
-				<span class="section">{{ section[:2] }}</span>
-				<span class="slash">/</span>
-				<span class="project">{{ project[:2] }}</span>
-			</div>
-			<div class="project-name">{{ project[2:]|replace_dash|upper }}</div>
-			<div class="info">
-				{% for line in info %}
-					<div class="line">
-						<span class="key">{{ line[0] }}:</span>
-						<span class="value">{{ line[1] }}</span>
-					</div>
-				{% endfor %}
-			</div>
+	<div class="landing">
+		<div class="span24 landing-img" style="background-image:url('/static/img/{{ section }}/{{ project }}/landing.png');">
 		</div>
-		<div class="x"></div>
-		<a href="" class="arrow">
-			<div class="arrow"></div>
-		</a>
-	</div>
+		<div class="span12">
+			<div class="project-description">
+				<div class="number">
+					<span class="section">{{ section[:2] }}</span>
+					<span class="slash">/</span>
+					<span class="project">{{ project[:2] }}</span>
+				</div>
+				<div class="project-name">{{ project[2:]|replace_dash|upper }}</div>
+				<div class="info">
+					{% for line in info %}
+						<div class="line">
+							<span class="key">{{ line[0] }}:</span>
+							<span class="value">{{ line[1] }}</span>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+			<div class="x"></div>
+			<a href="" class="arrow">
+				<div class="arrow"></div>
+			</a>
+		</div>
+	</div>   <!-- landing -->
+
+	<div class="carousel">
+
+	</div>  <!-- carousel -->
+{% endblock %}
+
+{% block jsinclude %}
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script src="/static/js/project.js"></script>
 {% endblock %}
