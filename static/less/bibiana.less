@@ -223,12 +223,49 @@ input:focus, select:focus, textarea:focus, a:focus {
 	height: @pageHeight;
 }
 
-.info, .x, .arrow {
+.x, .arrow {
 	height: @pageHeight / 3;
 }
 
-.info {
+.project-description {
+	@topPadding: 30px;
+	height: @pageHeight / 3 - @topPadding;
 	background-color: @orange;
+	color: white;
+	padding-left: 25px;
+	padding-top: @topPadding;
+	letter-spacing: 1px;
+	.number {
+		.section {
+			font-family: @serifFontFamily;
+			font-size: 30px;
+		}
+		.slash {
+			font-family: @serifFontFamily;
+			font-size: 35px;
+			margin-left: 2px;
+		}
+		.project {
+			font-size: 35px;
+			font-weight: 200;
+			font-style: italic;
+		}
+	}
+	.project-name {
+		font-style: italic;
+		font-size: 12px;
+		margin-top: 25px;
+		margin-bottom: 10px;
+	}
+	.info {
+		font-size: 12px;
+		.line {
+			margin-bottom: 3px;
+			.key {
+				font-weight: bold;
+			}
+		}
+	}
 }
 
 .x {
@@ -237,4 +274,5 @@ input:focus, select:focus, textarea:focus, a:focus {
 
 .arrow {
 	background-image: url("/static/img/arrow.png");
+	background-color: grey;
 }

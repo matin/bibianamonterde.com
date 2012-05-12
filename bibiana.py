@@ -58,6 +58,15 @@ def get_projects(section):
     return projects
 
 
+def read_info(section, project):
+    info_path = os.path.join(app.static_folder, 'img', section, project, 'info.txt')
+    info = []
+    with open(info_path) as info_file:
+        for line in info_file:
+            info.append(tuple(line.strip().split(': ')))
+    return info
+
+
 def logged_in():
     return 'authed' in session
 
@@ -121,7 +130,7 @@ def project_view(section, project):
     if not os.path.isdir('static/img/{}/{}'.format(section, project)):
         abort(404)
     return render_template('project.html', tree=TREE, section=section,
-        project=project)
+        project=project, info=read_info(section, project))
 
 
 if __name__ == '__main__':
