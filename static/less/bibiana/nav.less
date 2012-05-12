@@ -1,0 +1,127 @@
+@navMargin: 25px;
+@menuPos: 176px;
+
+.nav {
+    margin-top: @navMargin;
+    margin-left: @navMargin - 20px;
+
+    a:hover { text-decoration: none; }
+    .bibiana {
+        font-family: @serifFontFamily;
+        font-size: 24px;
+        line-height: 28px;
+        letter-spacing: 1px;
+        color: black;
+        text-decoration: none;
+    }
+
+    .job-title {
+        float: right;
+        margin-right: 44px;
+        font-size: 25px;
+        font-style: italic;
+        font-weight: 200;
+        color: @grey;
+        line-height: 25px;
+        margin-top: 1px;
+        letter-spacing: 2px
+    }
+
+    .menu {
+        position: absolute;
+        top: @menuPos;
+
+        ol {
+            list-style: none;
+            margin: 0;
+            ol {
+                margin-left: 28px;
+                margin-top: 11px;
+            }
+        }
+
+        li {
+            line-height: 11px;
+            margin-bottom: 11px;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+            &:hover, &.selected {
+                border-bottom: 1px solid black;
+                padding-bottom: 2px;
+            }
+        }
+        .number {
+            font-family: @serifFontFamily;
+            font-size: 10px;
+            letter-spacing: 1px;
+        }
+        .slash {
+            font-family: @serifFontFamily;
+            font-size: 11px;
+        }
+        .name {
+            font-size: 11px;
+            font-style: italic;
+            letter-spacing: 1px;
+            color: @grey;
+        }
+        .project {
+            margin-bottom: 7px;
+            a:hover, a.selected {
+                color: @orange;
+                border: 0;
+                .name { color: @orange; }
+            }
+            .number {
+                font-family: @sansFontFamily;
+                font-style: italic;
+                font-size: 11px;
+            }
+        }
+    }
+
+
+    .email {
+        position: absolute;
+        top: @pageHeight - @navMargin - 11px;
+		a {
+	        text-decoration: none;
+	        color: @orange;
+	        font-style: italic;
+	        font-size: 11px;
+	        line-height: 11px;
+	        letter-spacing: 1px;
+	        &:hover { text-decoration: underline; }
+		}
+    }
+}
+
+.password {
+	background-color: @orange;
+	.bibiana { color: white; }
+	.job-title { color: white; }
+	.email a { color: white; }
+	form {
+		position: absolute;
+		top: 499px - @menuPos;
+		label {
+			color: white;
+			font-family: @sansFontFamily;
+			font-size: 12px;
+			font-style: italic;
+			letter-spacing: 1px;
+		}
+		input {
+			@padding: 5px;
+			border-radius: 0;
+			border: 0;
+			vertical-align: middle;
+			padding: @padding;
+			width: 210px - 2 * @padding;
+			height: 25px - 2 * @padding;
+		}
+	}
+}

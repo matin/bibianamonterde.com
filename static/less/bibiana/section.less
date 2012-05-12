@@ -1,0 +1,68 @@
+.preview {
+    height: @previewHeight;
+    color: white;
+
+    span.orange {
+        display: none;
+    }
+    &:hover span.orange.hover {
+        display: block;
+        background: @orange;
+        height: @previewHeight;
+        opacity: .95;
+    }
+    .number {
+        line-height: 108px;
+        margin-left: 30px;
+        .section {
+            font-size: 58px;
+            font-family: @serifFontFamily;
+        }
+        .slash {
+            font-family: @serifFontFamily;
+            font-size: 70px;
+            vertical-align: -1px;
+            margin-left: 3px;
+        }
+        .project {
+            font-size: 70px;
+            font-style: italic;
+            font-weight: 200;
+        }
+    }
+
+    span.text {
+        margin-left: 30px;
+        font-size: 12px;
+        letter-spacing: 1px;
+        font-weight: 200;
+        font-style: italic;
+        line-height: 67px;
+    }
+}
+
+.bottom-right {
+    background: @orange;
+    color: white;
+    height: @pageHeight / 3;
+    .section {
+        margin: 35px 0 0 30px;
+        .number {
+            font-size: 32px;
+            font-family: @serifFontFamily;
+            letter-spacing: 3px;
+        }
+        .slash {
+            font-family: @serifFontFamily;
+            font-size: 37px;
+            vertical-align: -1px;
+            margin-left: 1px;
+        }
+        .name {
+            font-size: 35px;
+            font-style: italic;
+            font-weight: 200;
+            letter-spacing: 3px;
+        }
+    }
+}
