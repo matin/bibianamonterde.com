@@ -1,0 +1,32 @@
+@carouselWidth: 720px;
+@imageWidth: 620px;
+@peekWidth: 20px;
+
+.carousel {
+	background-color: #f6f6f6;
+	height: @pageHeight;
+	display: none;
+	.item {
+		display: none;
+		width: @imageWidth;
+	}
+	.active {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	table {
+		height: 100%;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		border: 0;
+		td {
+			vertical-align: middle;
+			text-align: center;			
+		}
+	}
+	.next {
+		// display: block;
+	}
+}
