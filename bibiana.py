@@ -1,4 +1,5 @@
 from collections import defaultdict
+from datetime import timedelta
 import re
 import os
 
@@ -6,9 +7,8 @@ from flask import (abort, Flask, redirect, render_template, request, session,
     url_for)
 
 
-app = Flask(__name__)
+app = Flask('bibiana')
 app.secret_key = 'e+moUemdz7GkrjiIb+xIp8M1szMrx7KNvBAO'
-
 
 def build_tree():
     img_folder = os.path.join(app.static_folder, 'img')
@@ -74,6 +74,7 @@ TREE = build_tree()
 @app.route('/login')
 def login():
     session['authed'] = 'true'
+    session.permanent = True
     return redirect(url_for('index'))
 
 
