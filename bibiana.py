@@ -1,5 +1,6 @@
 from collections import defaultdict
 from datetime import timedelta
+from functools import wraps
 import re
 import os
 
@@ -60,12 +61,14 @@ def logged_in():
     return 'authed' in session
 
 
-def requires_auth(controller):
-    def decorator(*args, **kwargs):
+def requires_auth(view):
+    @wraps(view)
+    def decorated(*args, **kwargs):
         if not logged_in():
             return redirect(url_for('index'))
         else:
-            return controller(*args, **kwargs)
+            return view(*args, **kwargs)
+    return decorated
 
 
 TREE = build_tree()
@@ -96,8 +99,8 @@ def index():
     return resp
 
 
-@requires_auth
 @app.route('/<section>')
+@requires_auth
 def grid(section):
     if not os.path.isdir('static/img/{}'.format(section)):
         abort(404)
