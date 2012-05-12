@@ -10,6 +10,7 @@ from flask import (abort, Flask, redirect, render_template, request, session,
 
 app = Flask('bibiana')
 app.secret_key = 'e+moUemdz7GkrjiIb+xIp8M1szMrx7KNvBAO'
+PASSWORD = 'zende'
 
 def build_tree():
     img_folder = os.path.join(app.static_folder, 'img')
@@ -65,6 +66,7 @@ def requires_auth(view):
     @wraps(view)
     def decorated(*args, **kwargs):
         if not logged_in():
+            session['redirect_url'] = request.path
             return redirect(url_for('index'))
         else:
             return view(*args, **kwargs)
@@ -74,11 +76,16 @@ def requires_auth(view):
 TREE = build_tree()
 
 
-@app.route('/login')
+@app.route('/login', methods=['POST'])
 def login():
-    session['authed'] = 'true'
-    session.permanent = True
-    return redirect(url_for('index'))
+    redirect_url = url_for('index')
+    if request.form.get('password', '').lower() == 'zende':
+        session['authed'] = 'true'
+        session.permanent = True
+        redirect_url = session.pop('redirect_url', redirect_url)
+    else:
+        pass  # failed
+    return redirect(redirect_url)
 
 
 @app.route('/logout')
@@ -109,5 +116,5 @@ def grid(section):
 
 
 if __name__ == '__main__':
-    app.debug = os.environ.get('BIBIANA') == 'debug' or False
+    app.debug = os.environ.get('BIBIANA', '').lower() == 'debug' or False
     app.run(host='0.0.0.0')
