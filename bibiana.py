@@ -19,13 +19,13 @@ def build_tree():
         section_folder = os.path.join(img_folder, section)
         if not (section[:2].isdigit() and os.path.isdir(section_folder)):
             continue
-        section = (section[:2], section[2:].replace('-', ' '))
+        section = (section[:2], section[2:])
 
         for project in os.listdir(section_folder):
             project_folder = os.path.join(section_folder, project)
             if not (project[:2].isdigit() and os.path.isdir(project_folder)):
                 continue
-            project = (project[:2], project[2:].replace('-', ' '))
+            project = (project[:2], project[2:])
             tree[section].append(project)
     return tree
 
@@ -47,10 +47,8 @@ def get_projects(section):
         m = project_re.match(image)
         if m:
             projects[image] = m.groupdict()
-            projects[image]['section_name'] = (projects[image]['section_name']
-                .replace('-',' '))
-            projects[image]['project_name'] = (projects[image]['project_name']
-                .replace('-',' '))
+            projects[image]['section_name'] = projects[image]['section_name']
+            projects[image]['project_name'] = projects[image]['project_name']
             projects[image]['url'] = ('/{section_number}{section_name}/'
                 '{project_number}{project_name}'.format(**m.groupdict()))
         projects[image]['image_url'] = '{}/img/{}/{}'.format(
@@ -80,6 +78,11 @@ def requires_auth(view):
         else:
             return view(*args, **kwargs)
     return decorated
+
+
+@app.template_filter()
+def replace_dash(s):
+    return s.replace('-', ' ')
 
 
 TREE = build_tree()

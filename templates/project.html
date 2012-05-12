@@ -10,7 +10,7 @@
 				<span class="slash">/</span>
 				<span class="project">{{ project[:2] }}</span>
 			</div>
-			<div class="project-name">{{ project[2:]|upper }}</div>
+			<div class="project-name">{{ project[2:]|replace_dash|upper }}</div>
 			<div class="info">
 				{% for line in info %}
 					<div class="line">
