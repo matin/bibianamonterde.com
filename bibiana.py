@@ -110,7 +110,7 @@ def logout():
 @app.route('/')
 def index():
     if logged_in():
-        resp = render_template('grid.html', tree=TREE, section='home',
+        resp = render_template('section.html', tree=TREE, section='home',
             projects=get_projects('home'))
     else:
         resp = render_template('login.html', section='password',
@@ -123,7 +123,7 @@ def index():
 def section_view(section):
     if not os.path.isdir('static/img/{}'.format(section)):
         abort(404)
-    return render_template('grid.html', tree=TREE, section=section,
+    return render_template('section.html', tree=TREE, section=section,
         projects=get_projects(section))
 
 
