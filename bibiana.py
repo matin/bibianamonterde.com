@@ -65,4 +65,5 @@ def grid(section='home'):
 
 
 if __name__ == '__main__':
+    app.debug = os.environ.get('BIBIANA') == 'debug' or False
     app.run(host='0.0.0.0')
