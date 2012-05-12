@@ -2,6 +2,7 @@
 
 {% block menu %}
 	<form action="/login" method="POST">
-		<input id="password" name="password" type="password" autofocus="autofocus">
+		<label for="password">PASSWORD:</label>
+		<input id="password" name="password" type="password" autofocus="autofocus" tabindex=1 >
 	</form>
 {% endblock %}

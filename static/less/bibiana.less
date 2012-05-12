@@ -6,6 +6,8 @@
 @pageHeight: 600px;
 @navMargin: 25px;
 @previewHeight: 200px;
+@menuPos: 176px;
+@inputPadding: 5px;
 @serifFontFamily: Prata, Georgia, "Times New Roman", Times, serif;
 
 
@@ -115,7 +117,7 @@ body {
 
     .menu {
         position: absolute;
-        top: 176px;
+        top: @menuPos;
 
         ol {
             list-style: none;
@@ -169,16 +171,50 @@ body {
         }
     }
 
-    .email a {
-        text-decoration: none;
-        color: @orange;
-        font-style: italic;
-        font-size: 11px;
-        line-height: 11px;
+
+    .email {
         position: absolute;
         top: @pageHeight - @navMargin - 11px;
-        letter-spacing: 1px;
-        &:hover { text-decoration: underline; }
-        // TODO: try to use the same underline as the menu
+		a {
+	        text-decoration: none;
+	        color: @orange;
+	        font-style: italic;
+	        font-size: 11px;
+	        line-height: 11px;
+	        letter-spacing: 1px;
+	        &:hover { text-decoration: underline; }
+		}
     }
+}
+
+.password {
+	background-color: @orange;
+	.bibiana { color: white; }
+	.job-title { color: white; }
+	.email a { color: white; }
+	form {
+		position: absolute;
+		top: 499px - @menuPos;
+		label {
+			color: white;
+			font-family: @sansFontFamily;
+			font-size: 12px;
+			font-style: italic;
+			letter-spacing: 1px;
+		}
+		input {
+			border-radius: 0;
+			border: 0;
+			vertical-align: middle;
+			padding: @inputPadding;
+			width: 210px - 2 * @inputPadding;
+			height: 25px - 2 * @inputPadding;
+		}
+	}
+}
+
+input:focus, select:focus, textarea:focus, a:focus {
+	outline: none;
+	outline-width: 0;
+	box-shadow: none;
 }
