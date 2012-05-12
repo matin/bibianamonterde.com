@@ -108,11 +108,20 @@ def index():
 
 @app.route('/<section>')
 @requires_auth
-def grid(section):
+def section_view(section):
     if not os.path.isdir('static/img/{}'.format(section)):
         abort(404)
     return render_template('grid.html', tree=TREE, section=section,
         projects=get_projects(section))
+
+
+@app.route('/<section>/<project>')
+@requires_auth
+def project_view(section, project):
+    if not os.path.isdir('static/img/{}/{}'.format(section, project)):
+        abort(404)
+    return render_template('project.html', tree=TREE, section=section,
+        project=project)
 
 
 if __name__ == '__main__':

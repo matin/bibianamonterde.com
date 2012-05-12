@@ -46,7 +46,7 @@
 				<ol>
 					{% for project_number, project_name in projects|sort if section_number + section_name == section %}
 						<li class="project">
-							<a href="/{{ section_number }}{{ section_name }}/{{ project_number }}{{ project_name }}">
+							<a href="/{{ section_number }}{{ section_name }}/{{ project_number }}{{ project_name }}" class="{{ 'selected' if project_number + project_name == project }}">
 								<span class="number">{{ project_number }}</span>
 								<span class="name">{{ project_name|upper }}</span>
 							</a>

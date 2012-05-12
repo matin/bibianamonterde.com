@@ -7,7 +7,6 @@
 @navMargin: 25px;
 @previewHeight: 200px;
 @menuPos: 176px;
-@inputPadding: 5px;
 @serifFontFamily: Prata, Georgia, "Times New Roman", Times, serif;
 
 
@@ -158,7 +157,7 @@ body {
         }
         .project {
             margin-bottom: 7px;
-            a:hover {
+            a:hover, a.selected {
                 color: @orange;
                 border: 0;
                 .name { color: @orange; }
@@ -203,12 +202,13 @@ body {
 			letter-spacing: 1px;
 		}
 		input {
+			@padding: 5px;
 			border-radius: 0;
 			border: 0;
 			vertical-align: middle;
-			padding: @inputPadding;
-			width: 210px - 2 * @inputPadding;
-			height: 25px - 2 * @inputPadding;
+			padding: @padding;
+			width: 210px - 2 * @padding;
+			height: 25px - 2 * @padding;
 		}
 	}
 }
@@ -217,4 +217,24 @@ input:focus, select:focus, textarea:focus, a:focus {
 	outline: none;
 	outline-width: 0;
 	box-shadow: none;
+}
+
+.landing {
+	height: @pageHeight;
+}
+
+.info, .x, .arrow {
+	height: @pageHeight / 3;
+}
+
+.info {
+	background-color: @orange;
+}
+
+.x {
+	background-image: url("/static/img/x.png");
+}
+
+.arrow {
+	background-image: url("/static/img/arrow.png");
 }
