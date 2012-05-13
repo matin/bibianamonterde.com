@@ -28,17 +28,23 @@
         </div>
     </div>   <!-- landing -->
 
-    <div class="carousel">
-        <table><tr><td>
+    <div class="span31">
+    <div id="myCarousel" class="carousel slide">
+        <div class="carousel-inner">
             <div class="item active"><img src="/static/img/01web/01inmobi/01-01.png"></div>
-            <div class="item next"><img src="/static/img/01web/01inmobi/02-01.png"></div>
+            <div class="item"><img src="/static/img/01web/01inmobi/02-01.png"></div>
             <div class="item"><img src="/static/img/01web/01inmobi/03-01.png"></div>
             <div class="item"><img src="/static/img/01web/01inmobi/04-01.png"></div>
-        </td></tr></table>
-    </div>  <!-- carousel -->
+        </div>
+        <!-- Carousel nav -->
+        <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+        <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+    </div>
+    </div>
 {% endblock %}
 
 {% block jsinclude %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script src="/static/js/carousel.js"></script>
+    <script src="/static/js/bootstrap-carousel.js"></script>
+    <script src="/static/js/project.js"></script>
 {% endblock %}
