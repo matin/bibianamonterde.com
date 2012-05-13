@@ -40,7 +40,11 @@
   };
 
   $(document).ready(function() {
-    return carousel();
+    carousel();
+    return $('.landing a.arrow').click(function() {
+      $('.landing').hide();
+      return $('.carousel').show();
+    });
   });
 
 }).call(this);

@@ -34,3 +34,7 @@ carousel = ->
 
 $(document).ready ->
 	carousel()
+	$('.landing a.arrow').click(->
+		$('.landing').hide()
+		$('.carousel').show()
+	)
