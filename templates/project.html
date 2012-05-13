@@ -31,10 +31,9 @@
     <div class="carousel">
         <table><tr><td>
         <div class="carousel-inner" style="left: 35px; width: 1000000px;">
-            <img src="/static/img/01web/01inmobi/01-01.png" class="active">
-			<img src="/static/img/01web/01inmobi/02-01.png">
-            <img src="/static/img/01web/01inmobi/03-01.png">
-            <img src="/static/img/01web/01inmobi/04-01.png">
+			{% for image in images %}
+				<img src="/static/img/{{ section }}/{{ project }}/{{ image }}" class="{{ 'active' if loop.first }}">
+			{% endfor %}
         </div>
         </td></tr></table>
     </div>

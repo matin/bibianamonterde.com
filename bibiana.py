@@ -130,10 +130,14 @@ def section_view(section):
 @app.route('/<section>/<project>')
 @requires_auth
 def project_view(section, project):
-    if not os.path.isdir('static/img/{}/{}'.format(section, project)):
+    project_folder = os.path.join(app.static_folder, 'img', section, project)
+    if not os.path.isdir(project_folder):
         abort(404)
+    files = os.listdir(project_folder)
+    images = [f for f in files if (f.endswith('png') or f.endswith('jpg')) and
+        not f.startswith('landing')]
     return render_template('project.html', tree=TREE, section=section,
-        project=project, info=read_info(section, project))
+        project=project, info=read_info(section, project), images=images)
 
 
 if __name__ == '__main__':
