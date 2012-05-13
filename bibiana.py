@@ -136,6 +136,7 @@ def project_view(section, project):
     files = os.listdir(project_folder)
     images = [f for f in files if (f.endswith('png') or f.endswith('jpg')) and
         not f.startswith('landing')]
+    images.sort()
     return render_template('project.html', tree=TREE, section=section,
         project=project, info=read_info(section, project), images=images)
 
