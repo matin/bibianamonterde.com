@@ -1,5 +1,6 @@
 interval = 200
 lastSlide = 0
+opacity = .5
 
 
 slide = (pixels) ->
@@ -22,7 +23,7 @@ doubleKeypress = ->
 moveTo = (sibling) ->
 	return unless $('.carousel-inner .active')[sibling]().length
 	return if doubleKeypress()
-	$('.carousel-inner .active').fadeTo(interval, .5)
+	$('.carousel-inner .active').fadeTo(interval, opacity)
 	$('.carousel-inner .active')[sibling]().fadeTo(interval, 1)
 	$('.carousel-inner .active')[sibling]().addClass(sibling)
 	$('.carousel-inner .active').removeClass('active')
@@ -47,6 +48,14 @@ resetCarousel = ->
 	$('.carousel-inner .active').prev().unbind()
 	$('.carousel-inner .active').next().click(next)
 	$('.carousel-inner .active').prev().click(prev)
+	$('.carousel-inner .active').next().hover(
+		-> $(this).fadeTo(50, 1),
+		-> $(this).fadeTo(50, opacity)
+	)
+	$('.carousel-inner .active').prev().hover(
+		-> $(this).fadeTo(50, 1),
+		-> $(this).fadeTo(50, opacity)
+	)
 
 
 startCarousel = ->
