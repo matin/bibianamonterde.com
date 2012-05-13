@@ -5,27 +5,22 @@ slide = (pixels) ->
 	left = (curr + pixels).toString() + 'px'
 	$(inner).animate({'left': left}, 200)
 
+moveTo = (sibling) ->
+	$('.carousel-inner .active').fadeTo(200, .5)
+	$('.carousel-inner .active')[sibling]().fadeTo(200, 1)
+	$('.carousel-inner .active')[sibling]().addClass(sibling)
+	$('.carousel-inner .active').removeClass('active')
+	$('.carousel-inner .' + sibling).addClass('active')
+	$('.carousel-inner .active').removeClass(sibling)
+	carousel()
+	slide(650 if sibling == 'prev' else -650)
 
 prev = ->
-	$('.carousel-inner .active').fadeTo(200, .5)
-	$('.carousel-inner .active').prev().fadeTo(200, 1)
-	$('.carousel-inner .active').prev().addClass('prev')
-	$('.carousel-inner .active').removeClass('active')
-	$('.carousel-inner .prev').addClass('active')
-	$('.carousel-inner .active').removeClass('prev')
-	carousel()
-	slide(650)
+	moveTo('prev')
 
 
 next = ->
-	$('.carousel-inner .active').fadeTo(200, .5)
-	$('.carousel-inner .active').next().fadeTo(200, 1)
-	$('.carousel-inner .active').next().addClass('next')
-	$('.carousel-inner .active').removeClass('active')
-	$('.carousel-inner .next').addClass('active')
-	$('.carousel-inner .active').removeClass('next')
-	carousel()
-	slide(-650)
+	moveTo('next')
 
 
 carousel = ->
