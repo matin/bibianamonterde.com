@@ -1,16 +1,29 @@
+interval = 200
+lastSlide = 0
+
+
 slide = (pixels) ->
 	inner = $('.carousel-inner')[0]
 	curr = inner.style.left
 	curr = parseInt(curr.replace /px/, '')
 	left = (curr + pixels).toString() + 'px'
-	$(inner).animate({'left': left}, 200)
+	$(inner).animate({'left': left}, interval)
+
+
+doubleKeypress = ->
+	now = new Date()
+	if now - lastSlide <= interval
+		return true
+	else
+		lastSlide = now
+		return false
 
 
 moveTo = (sibling) ->
-	unless $('.carousel-inner .active')[sibling]().length
-		return
-	$('.carousel-inner .active').fadeTo(200, .5)
-	$('.carousel-inner .active')[sibling]().fadeTo(200, 1)
+	return unless $('.carousel-inner .active')[sibling]().length
+	return if doubleKeypress()
+	$('.carousel-inner .active').fadeTo(interval, .5)
+	$('.carousel-inner .active')[sibling]().fadeTo(interval, 1)
 	$('.carousel-inner .active')[sibling]().addClass(sibling)
 	$('.carousel-inner .active').removeClass('active')
 	$('.carousel-inner .' + sibling).addClass('active')
@@ -18,6 +31,7 @@ moveTo = (sibling) ->
 	resetCarousel()
 	pixels = if sibling == 'prev' then 650 else -650
 	slide(pixels)
+
 
 prev = ->
 	moveTo('prev')
