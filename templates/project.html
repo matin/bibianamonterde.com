@@ -1,5 +1,9 @@
 {% extends "bibiana.html" %}
 
+{% block title %}
+	{{ project[2:]|replace_dash|title }} :: {{ section[2:]|replace_dash|title }} :: Bibiana Monterde
+{% endblock %}
+
 {% block main %}
     <div class="landing">
         <div class="span24 landing-img" style="background-image:url('/static/img/{{ section }}/{{ project }}/landing.png');">

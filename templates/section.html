@@ -1,5 +1,14 @@
 {% extends "bibiana.html" %}
 
+{% block title %}
+	{% if section in ['home', 'password'] %}
+		Bibiana Monterde :: Graphic Designer
+	{% else %}
+		{{ section[2:]|replace_dash|title }} :: Bibiana Monterde
+	{% endif %}
+{% endblock %}
+
+
 {% block main %}
 	{% for _, project in projects|dictsort %}
 		{% if loop.index0 is divisibleby 3 %} <div class="row"> {% endif %}
