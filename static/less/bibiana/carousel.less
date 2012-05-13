@@ -5,16 +5,23 @@
 	background-color: #f6f6f6;
 	height: @pageHeight;
 	overflow: hidden;
-	line-height: 1;
-	position: relative;
 }
 
 .carousel-inner {
-	left: -571px;
 	width: 1000000px;
-	height: 495px;
+	position: relative;
 	img {
 		margin-left: 15px;
 		margin-right: 15px;
 	}
+}
+
+// vertically align
+table {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	td { vertical-align: middle; }
 }
