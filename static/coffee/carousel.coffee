@@ -1,6 +1,6 @@
 interval = 200
-lastSlide = 0
 opacity = .5
+sliding = false
 
 
 slide = (pixels) ->
@@ -8,21 +8,14 @@ slide = (pixels) ->
 	curr = inner.style.left
 	curr = parseInt(curr.replace /px/, '')
 	left = (curr + pixels).toString() + 'px'
-	$(inner).animate({'left': left}, interval)
-
-
-doubleKeypress = ->
-	now = new Date()
-	if now - lastSlide <= interval
-		return true
-	else
-		lastSlide = now
-		return false
+	sliding = true
+	$(inner).animate({'left': left}, interval, -> sliding = false)
 
 
 moveTo = (sibling) ->
 	return unless $('.carousel-inner .active')[sibling]().length
-	return if doubleKeypress()
+	return if sliding
+	# return if doubleKeypress()
 	$('.carousel-inner .active').fadeTo(interval, opacity,
 		-> $(this).css({'opacity': ''})
 	)
