@@ -14,21 +14,25 @@
   };
 
   prev = function() {
-    slide(650);
+    $('.carousel-inner .active').fadeTo(200, .5);
+    $('.carousel-inner .active').prev().fadeTo(200, 1);
     $('.carousel-inner .active').prev().addClass('prev');
     $('.carousel-inner .active').removeClass('active');
     $('.carousel-inner .prev').addClass('active');
     $('.carousel-inner .active').removeClass('prev');
-    return carousel();
+    carousel();
+    return slide(650);
   };
 
   next = function() {
-    slide(-650);
+    $('.carousel-inner .active').fadeTo(200, .5);
+    $('.carousel-inner .active').next().fadeTo(200, 1);
     $('.carousel-inner .active').next().addClass('next');
     $('.carousel-inner .active').removeClass('active');
     $('.carousel-inner .next').addClass('active');
     $('.carousel-inner .active').removeClass('next');
-    return carousel();
+    carousel();
+    return slide(-650);
   };
 
   carousel = function() {

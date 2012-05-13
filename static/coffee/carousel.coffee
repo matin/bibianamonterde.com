@@ -7,21 +7,25 @@ slide = (pixels) ->
 
 
 prev = ->
-	slide(650)
+	$('.carousel-inner .active').fadeTo(200, .5)
+	$('.carousel-inner .active').prev().fadeTo(200, 1)
 	$('.carousel-inner .active').prev().addClass('prev')
 	$('.carousel-inner .active').removeClass('active')
 	$('.carousel-inner .prev').addClass('active')
 	$('.carousel-inner .active').removeClass('prev')
 	carousel()
+	slide(650)
 
 
 next = ->
-	slide(-650)
+	$('.carousel-inner .active').fadeTo(200, .5)
+	$('.carousel-inner .active').next().fadeTo(200, 1)
 	$('.carousel-inner .active').next().addClass('next')
 	$('.carousel-inner .active').removeClass('active')
 	$('.carousel-inner .next').addClass('active')
 	$('.carousel-inner .active').removeClass('next')
 	carousel()
+	slide(-650)
 
 
 carousel = ->
