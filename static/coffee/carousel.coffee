@@ -72,6 +72,6 @@ startCarousel = ->
 
 
 $(document).ready ->
-	$('.landing a.arrow').click(->
+	$('.landing .arrow').click(->
 		startCarousel()
 	)

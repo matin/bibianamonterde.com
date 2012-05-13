@@ -91,7 +91,7 @@
   };
 
   $(document).ready(function() {
-    return $('.landing a.arrow').click(function() {
+    return $('.landing .arrow').click(function() {
       return startCarousel();
     });
   });
