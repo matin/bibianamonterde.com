@@ -41,11 +41,4 @@
         </div>
     </div> {# endrow #}
     {% endif %}
-
-	{# Prefetch project landing images #}
-	{% for project in projects.values() %}
-		{% if project.get('url') %}
-			<img src="/static/img{{ project['url'] }}/landing.png" style="display: none;">
-		{%- endif %}
-	{%- endfor %}
 {% endblock %}
