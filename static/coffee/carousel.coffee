@@ -15,7 +15,6 @@ slide = (pixels) ->
 moveTo = (sibling) ->
 	return unless $('.carousel-inner .active')[sibling]().length
 	return if sliding
-	# return if doubleKeypress()
 	$('.carousel-inner .active').fadeTo(interval, opacity,
 		-> $(this).css({'opacity': ''})
 	)
