@@ -1,13 +1,16 @@
 {% extends "bibiana.html" %}
 
 {% block title %}
-	{{ project[2:]|replace_dash|title }} :: {{ section[2:]|replace_dash|title }} :: Bibiana Monterde
+    {{ project[2:]|replace_dash|title }} :: {{ section[2:]|replace_dash|title }} :: Bibiana Monterde
 {% endblock %}
 
 {% block main %}
     <div class="landing">
-		{# Force fetching landing.png image first. Background images are given lower priority in webkit #}
-		<img src="/static/img/{{ section }}/{{ project }}/landing.png" style="display: none;">
+        {# Force background image first. Background images are given lower priority in webkit #}
+        <img src="/static/img/x.png" style="display: none;">
+        <img src="/static/img/arrow.png" style="display: none;">
+        <img src="/static/img/{{ section }}/{{ project }}/landing.png" style="display: none;">
+        
         <div class="span24 landing-img" style="background-image:url('/static/img/{{ section }}/{{ project }}/landing.png');">
         </div>
         <div class="span12">
@@ -35,9 +38,9 @@
     <div class="carousel">
         <table><tr><td>
         <div class="carousel-inner" style="left: 35px; width: 1000000px;">
-			{% for image in images %}
-				<img src="/static/img/{{ section }}/{{ project }}/{{ image }}" class="{{ 'active' if loop.first }}">
-			{% endfor %}
+            {% for image in images %}
+                <img src="/static/img/{{ section }}/{{ project }}/{{ image }}" class="{{ 'active' if loop.first }}">
+            {% endfor %}
         </div>
         </td></tr></table>
     </div>
