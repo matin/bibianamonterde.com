@@ -6,6 +6,8 @@
 
 {% block main %}
     <div class="landing">
+		{# Force fetching landing.png image first. Background images are given lower priority in webkit #}
+		<img src="/static/img/{{ section }}/{{ project }}/landing.png" style="display: none;">
         <div class="span24 landing-img" style="background-image:url('/static/img/{{ section }}/{{ project }}/landing.png');">
         </div>
         <div class="span12">
