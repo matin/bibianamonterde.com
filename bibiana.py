@@ -88,6 +88,13 @@ def replace_dash(s):
 TREE = build_tree()
 
 
+@app.route('/update')
+def update():
+    global TREE
+    TREE = build_tree()
+    return redirect(url_for('index'))
+
+
 @app.route('/login', methods=['POST'])
 def login():
     redirect_url = url_for('index')
