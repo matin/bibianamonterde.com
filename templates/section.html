@@ -1,18 +1,18 @@
 {% extends "bibiana.html" %}
 
 {% block title %}
-	{% if section in ['home', 'password'] %}
-		Bibiana Monterde :: Graphic Designer
-	{% else %}
-		{{ section[2:]|replace_dash|title }} :: Bibiana Monterde
-	{% endif %}
+    {% if section in ['home', 'password'] %}
+        Bibiana Monterde :: Graphic Designer
+    {% else %}
+        {{ section[2:]|replace_dash|title }} :: Bibiana Monterde
+    {% endif %}
 {% endblock %}
 
 
 {% block main %}
-	{% for _, project in projects|dictsort %}
-		{% if loop.index0 is divisibleby 3 %} <div class="row"> {% endif %}
-			{% if project.get('url') %}<a href="{{ project['url'] }}">{% endif %}
+    {% for _, project in projects|dictsort %}
+        {% if loop.index0 is divisibleby 3 %} <div class="row"> {% endif %}
+            {% if project.get('url') %}<a href="{{ project['url'] }}">{% endif %}
                 <div class="span12 preview" style="background-image:url('{{ project['image_url'] }}');">
                     <span class="orange {{ 'hover' if project.get('url') }}">
                         <span class="number">
@@ -35,7 +35,13 @@
                 <span class="number">{{ section[:2] }}</span>
                 <span class="slash">/</span>
                 <span class="name">
-                    {{ section[2:]|upper if section[2:]|length <= 5 else section[2:6]|upper }}
+                    {%- if section[2:] == 'packaging' %}
+                        PACK
+                    {%- elif section[2:] == 'identity' %}
+                        ID
+                    {%- else %}
+                        {{ section[2:]|upper }}
+                    {% endif %}
                 </span>
             </div>
         </div>
