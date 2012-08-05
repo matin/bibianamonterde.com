@@ -9,6 +9,8 @@ from flask import (abort, Flask, redirect, render_template, request, session,
 
 
 app = Flask('bibiana')
+# It's not a problem to have the following in a open repo since authentication
+# for the site is superficial
 app.secret_key = 'e+moUemdz7GkrjiIb+xIp8M1szMrx7KNvBAO'
 PASSWORD = 'zende'
 
