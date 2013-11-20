@@ -26,7 +26,7 @@ moveTo = (sibling) ->
 	$('.carousel-inner .' + sibling).addClass('active')
 	$('.carousel-inner .active').removeClass(sibling)
 	resetCarousel()
-	pixels = if sibling == 'prev' then 650 else -650
+	pixels = if sibling == 'prev' then 651 else -651
 	slide(pixels)
 
 
