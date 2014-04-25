@@ -39,6 +39,8 @@
                         PACK
                     {%- elif section[2:] == 'identity' %}
                         ID
+                    {%- elif section[2:] == 'photography' %}
+                        PHOTO
                     {%- else %}
                         {{ section[2:]|upper }}
                     {% endif %}
