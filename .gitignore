@@ -16,11 +16,12 @@ develop-eggs
 # Installer logs
 pip-log.txt
 
-# Unit test / coverage reports
-.coverage
-.tox
-
 *.swp
 .*.swp
 *~
 .DS_Store
+
+# server
+bibiana.sock
+bibianaenv/
+static/img/
